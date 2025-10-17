@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dan — Portfolio Tattoo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: #f0f0f0;
+      background: black url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow-x: hidden;
+    }
+
+  .video-container {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease;
+  }
+
+  .video-container video {
+    width: 60vw;
+    max-height: 90vh;
+    transition: all 0.5s ease;
+  }
+
+  .video-container.sticky {
+    position: fixed;
+    top: 10vh;
+    right: 5vw;
+    width: 30vw;
+    height: auto;
+    z-index: 10;
+  }
+
+  .video-container.sticky video {
+    width: 100%;
+    max-height: 60vh;
+  }
+
+
+    .arrows {
+      position: absolute;
+      bottom: 100px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 40px;
+    }
+
+    .arrows img {
+      width: 300px;
+      opacity: 0.7;
+    }
+
+    .arrows.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+    }
+
+
+    .content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 100px 20px;
+    margin-right: 35vw; /* Décale le texte vers la gauche */
+    }
+
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    p {
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .gallery, .mini-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 40px 0;
+    }
+
+    .gallery img, .mini-gallery img {
+      width: 100%;
+      max-width: 300px;
+      cursor: pointer;
+      border: 1px solid #444;
+      transition: transform 0.3s ease;
+    }
+
+    .grande-image img {
+     display: block;
+     margin: 40px auto;
+     max-width: 700px;
+     width: 100%;
+     height: auto;
+     border-radius: 4px; /* optionnel */
+    }
+
+
+
+    .mini-gallery img {
+      max-width: 150px;
+    }
+
+    .gallery img:hover, .mini-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+
+    @media screen and (max-width: 768px) {
+    .video-container video {
+      width: 90vw;
+      max-height: 60vh;
+    }
+
+    .video-container.sticky {
+     position: static;
+      width: 100%;
+     margin-bottom: 20px;
+    }
+
+    .video-container.sticky video {
+     width: 100%;
+     max-height: 50vh;
+   }
+
+    .arrows img {
+      width: 80px;
+    }
+
+    .content {
+     margin: 0 auto;
+     padding: 60px 20px;
+     margin-right: 0;
+     }
+     
+  h1 {
+    font-size: 2em;
+  }
+
+  .gallery img, .mini-gallery img {
+    max-width: 100%;
+  }
+
+  .mini-gallery {
+    gap: 10px;
+  }
+
+  .grande-image img {
+    max-width: 100%;
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <div class="video-container" id="videoBlock">
+    <video src="wolf tatts.mp4" autoplay muted loop></video>
+    <div class="arrows">
+      <img src="fleche.png" alt="Flèche gauche" />
+      <img src="fleche.png" alt="Flèche droite" />
+    </div>
+  </div>
+
+  <div class="content">
+    <p>
+    <h1>Qui je suis</h1>
+
+    <div class="gallery">
+      <img src="photo profil.jpg" alt="photo" />
+    </div>
+
+    <p>Je m'appelle Dan. J'ai toujours grandi dans l'univers du tatouage, mon père étant lui-même tatoueur à une époque où la France comptait à peine 200 tatoueurs sur tout le territoire. J'ai donc toujours dessiné et eu un pied dans le métier. J'ai vu le tatouage évoluer, se dégrader sur certains aspects, s'améliorer sur d'autres. Mais ce n’est qu’à mes 20 ans que j’ai pris conscience que je voulais en faire mon métier.</p>
+    <p>À l’époque, je ne trouvais pas mon travail assez bon pour me lancer. J’ai donc commencé par bosser mon dessin sur papier pour atteindre un niveau irréprochable, tout en explorant différents médiums : peinture, sculpture, digital, etc. Une fois prêt, book sous le bras, j’ai démarché le shop de mon secteur qui correspondait le plus à mon style — axé bio-organique, réalisme et blackwork. Même si aujourd’hui, je me concentre principalement sur le blackwork, avec une ambiance et une patte qui m'est propre. </p>
+    <p>J’ai réalisé mon apprentissage chez Graphicaderme à Nancy il y a 10 ans, après deux ans j'ai intégré un petit shop en périphérie de la ville pendant un moment. J’ai ensuite fait une pause de 3 ans pour aider mon père. Après cette parenthèse, j’ai passé 6 mois à travailler sur de la peau synthétique pour me réhabituer aux techniques, avant d’ouvrir mon studio privé, dans un secteur différent de celui où j’avais exercé auparavant.</p>
+    <p>Depuis, je passe mes journées à concevoir des motifs, gérer le studio, les rendez-vous et tout ce qui touche au métier. Cela fait plusieurs années que je souhaite m’éloigner davantage, n’appréciant pas particulièrement ma région d’origine. Une opportunité s’est présentée, et ne voulant pas tout recommencer à zéro, je cherche à intégrer une équipe pour continuer à vivre de ma passion, entouré de personnes qui me ressemblent, partager nos expériences et évoluer ensemble dans le secteur de Bordeaux.
+</p>
+</p>
+    <p>Je travaille principalement sur tablette pour mes designs. Je n’utilise pas l’assistant de ligne — j’ai appris sur papier et ça me déstabilise trop. Même si je suis plus à l’aise sur papier et que je le préfère, je suis une véritable catasrophe en photo, donc mes dessins papier ont un rendu vraiment moche sur mes clichés. C’est pour ça que je bosse sur tablette, sans parler de l’avantage pour les stencils.
+</p>
+    <p>Je garde néanmoins le même processus que sur papier. Je varie ma méthode de création selon que j’utilise ou non des références : technique académique ou tracé plus instinctif au feeling. Ça dépend du moment et de ce que je cherche à exprimer.
+
+    <div class="grande-image">
+      <img src="process.jpg" alt="process" />
+    </div>
+
+    <p>Je travaille en grande partie en noir et gris, même si la couleur ne me dérange pas. Il m’arrive d’en ajouter une touche dans un design, ou selon le sujet abordé, de réaliser des pièces entièrement en couleur. Je suis capable de proposer des flashs simples comme très complexes, dans des thèmes très variés.</p>
+    <div class="mini-gallery">
+      <img src="loup.jpg" alt="Tattoo 1" />
+      <img src="coeur.jpg" alt="Tattoo 2" />
+      <img src="varia (1).jpg" alt="Tattoo 1" />
+      <img src="varia (2).jpg" alt="Tattoo 2" />
+      <img src="varia (3).jpg" alt="Tattoo 1" />
+      <img src="varia (4).jpg" alt="Tattoo 2" />
+      <img src="varia (5).jpg" alt="Tattoo 1" />
+      <img src="varia (6).jpg" alt="Tattoo 2" />
+      <img src="varia (7).jpg" alt="Tattoo 1" />
+      <img src="varia (8).jpg" alt="Tattoo 2" />
+    </div>
+
+    <p>Je peux m’adapter aux tendances actuelles comme le manga, tout en les intégrant à mon style pour conserver mon identité visuelle. Je peux aussi me diriger vers des motifs plus “passe-partout” comme l’ornemental, le floral, etc.</p>
+    <div class="mini-gallery">
+      <img src="manga (1).jpg" alt="Mini 1" />
+      <img src="manga (3).jpg" alt="Mini 3" />
+      <img src="manga (4).jpg" alt="Mini 1" />
+      <img src="manga (2).jpg" alt="Mini 2" />
+      <img src="anya.jpg" alt="Mini 1" />
+      <img src="ornem.jpg" alt="Mini 2" />
+      <img src="main.jpg" alt="Mini 3" />
+      <img src="orn (1).jpg" alt="Mini 1" />
+      <img src="orn (3).jpg" alt="Mini 3" />
+      <img src="orn (4).jpg" alt="Mini 1" />
+      <img src="manga (5).jpg" alt="Mini 2" />
+      <img src="orn (6).jpg" alt="Mini 3" />
+    </div>
+
+    <p>J’ai une grosse préférence pour les motifs moyens à larges, où je suis clairement plus à l’aise, étant moins limité dans les détails. Je crée pas mal de pièces destinées à des parties du corps bien précises, pour un rendu esthétique aussi bien de près que de loin.</p>
+    <div class="mini-gallery">
+      <img src="full bod (1).jpg" alt="Tattoo 1" />
+      <img src="full bod (4).jpg" alt="Tattoo 2" />
+      <img src="full bod (3).jpg" alt="Tattoo 3" />
+      <img src="full bod (2).jpg" alt="Tattoo 4" />
+      <img src="full bod (5).jpg" alt="Tattoo 5" />
+      <img src="full bod (7).jpg" alt="Tattoo 6" />
+      <img src="full bod (8).jpg" alt="Tattoo 7" />
+      <img src="full bod (6).jpg" alt="Tattoo 8" />
+      <img src="full bod (11).jpg" alt="Tattoo 9" />
+      <img src="full bod (9).jpg" alt="Tattoo 10" />
+      <img src="full bod (10).jpg" alt="Tattoo 11" />
+      <img src="côtes.jpg" alt="Tattoo 12" />
+    </div>
+
+    <p>Et bien sûr, je peux répondre à des projets personnels clients, même les plus complexes. Par exemple, une cliente voulait un poisson ruban des abysses dans mon style, sur toute la longueur de la cheville. J’ai donc conçu un design avec l’animal tête en haut, mis en scène comme s’il remontait vers la surface.
+    </p>
+    <div class="gallery">
+      <img src="regalec.jpg" alt="Poisson ruban" />
+      <img src="regalec tattoo.jpg" alt="Poisson ruban 2" />
+    </div>
+
+    <p>Une autre cliente a craqué sur une de mes bannières en convention. Mon design de base avait déjà été modifié pour la bannière, et elle m’a demandé quelques modifications ajout de fleurs, un rendu moins “sale”, et l’intégration de son chat.
+    </p>
+    <div class="grande-image">
+      <img src="banni.png" alt="Bannière modifiée" />
+    </div>
+
+    <p>Je sais aussi faire des covers assez complexes, sans me limiter à camoufler un ancien tatouage dans une zone sombre. Je m’appuie sur les courbes initiales pour créer un motif autour.</p>
+    <div class="gallery">
+      <img src="dos1.jpg" alt="Cover 1" />
+      <img src="dos2.jpg" alt="Cover 2" />
+      <img src="dos3.jpg" alt="Cover 3" />
+    </div>
+
+    <p>Globalement, je suis capable de répondre à des demandes très variées.</p>
+    <div class="mini-gallery">
+      <img src="rest ttt (1).jpg" alt="Mini 4" />
+      <img src="rest flash (1).jpg" alt="Mini 4" />
+      <img src="rest ttt (2).jpg" alt="Mini 4" />
+      <img src="rest flash (2).jpg" alt="Mini 4" />
+      <img src="rest ttt (3).jpg" alt="Mini 4" />
+      <img src="rest flash (3).jpg" alt="Mini 4" />
+      <img src="rest ttt (4).jpg" alt="Mini 4" />
+      <img src="rest flash (4).jpg" alt="Mini 4" />
+      <img src="rest ttt (5).jpg" alt="Mini 4" />
+      <img src="rest flash (5).jpg" alt="Mini 4" />
+      <img src="rest ttt (6).jpg" alt="Mini 4" />
+      <img src="rest flash (6).jpg" alt="Mini 4" />
+      <img src="rest ttt (7).jpg" alt="Mini 4" />
+      <img src="rest flash (7).jpg" alt="Mini 4" />
+      <img src="rest ttt (8).jpg" alt="Mini 4" />
+      <img src="rest flash (8).jpg" alt="Mini 4" />
+      <img src="rest ttt (9).jpg" alt="Mini 4" />
+      <img src="rest flash (9).jpg" alt="Mini 4" />
+      <img src="rest ttt (10).jpg" alt="Mini 4" />
+      <img src="pipou (1).jpg" alt="Mini 4" />
+      <img src="rest ttt (11).jpg" alt="Mini 4" />
+      <img src="pipou (2).jpg" alt="Mini 4" />
+      <img src="rest ttt (12).jpg" alt="Mini 4" />
+      <img src="pipou (3).jpg" alt="Mini 4" />
+      <img src="rest ttt (13).jpg" alt="Mini 4" />
+      <img src="pipou (4).jpg" alt="Mini 4" />
+      <img src="rest ttt (14).jpg" alt="Mini 4" />
+      <img src="pipou (5).jpg" alt="Mini 4" />
+      <img src="rest ttt (15).jpg" alt="Mini 4" />
+      <img src="pipou (6).jpg" alt="Mini 4" />
+      <img src="rest ttt (16).jpg" alt="Mini 4" />
+      <img src="pipou (7).jpg" alt="Mini 4" />
+      <img src="rest ttt (17).jpg" alt="Mini 4" />
+      <img src="pipou (8).jpg" alt="Mini 4" />
+      <img src="rest ttt (18).jpg" alt="Mini 4" />
+      <img src="pipou (9).jpg" alt="Mini 4" />
+      <img src="rest ttt (19).jpg" alt="Mini 4" />
+      <img src="pipoute.jpg" alt="Mini 4" />
+      <img src="rest ttt (20).jpg" alt="Mini 4" />
+      <img src="rest ttt (21).jpg" alt="Mini 4" />
+    </div>
+
+    <p>En dehors du tattoo sur mon temps libre, je continue à toucher un peu à tout — sculpture, peinture, design à destination d'autres supports (t-shirt, poster etc) — dans une démarche constante d’amélioration. Ma vie tourne vraiment autour de cette recherche de création.</p>
+    <div class="mini-gallery">
+      <img src="vitrail.jpg" alt="Sculpture" />
+      <img src="poster (3).jpg" alt="poster" />
+      <img src="skate.jpg" alt="Peinture" />
+      <img src="poster (4).jpg" alt="poster" />
+      <img src="tshirt.png" alt="Design textile" />
+      <img src="poster (1).jpg" alt="poster" />
+      <img src="sculpture.jpg" alt="Peinture" />
+    </div>
+
+    <p>J'espère que mon taff t'as plu et peut-être à bientôt!</p>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <img src="" alt="Zoom" />
+  </div>
+
+  <script>
+  const videoBlock = document.getElementById('videoBlock');
+  const arrows = videoBlock.querySelector('.arrows');
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('img');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      videoBlock.classList.add('sticky');
+      arrows.classList.add('hidden');
+    } else {
+      videoBlock.classList.remove('sticky');
+      arrows.classList.remove('hidden');
+    }
+  });
+
+
+    document.querySelectorAll('.gallery img, .mini-gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.src;
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
