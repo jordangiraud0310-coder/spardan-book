@@ -24,10 +24,18 @@
   }
 
   .video-container video {
-    width: 60vw;
-    max-height: 90vh;
+    width: 90vw;
+    max-height: 120vh;
     transition: all 0.5s ease;
   }
+
+  .video-container iframe {
+    width: 25vw;
+    height: 45vw;
+    max-width: 1200px;
+    max-height: 675px;
+  }
+
 
   .video-container.sticky {
     position: fixed;
@@ -187,12 +195,22 @@
 <body>
 
   <div class="video-container" id="videoBlock">
-    <video src="wolf tatts.mp4" autoplay muted loop></video>
-    <div class="arrows">
-      <img src="fleche.png" alt="Flèche gauche" />
-      <img src="fleche.png" alt="Flèche droite" />
-    </div>
+  <iframe
+    width="200"
+    height="315"
+    src="https://www.youtube.com/embed/hX6j9HRaipM?autoplay=1&mute=1"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+  </iframe>
+
+  <div class="arrows">
+    <img src="fleche.png" alt="Flèche gauche" />
+    <img src="fleche.png" alt="Flèche droite" />
   </div>
+</div>
+
 
   <div class="content">
     <p>
